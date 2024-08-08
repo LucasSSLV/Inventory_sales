@@ -10,7 +10,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
 import money from "../../../assets/images/money.jpeg";
-import styles from "../style/inputStyle/styleGeneric";
+import styles from "../style/stylesGenerics/styleGeneric";
 
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);

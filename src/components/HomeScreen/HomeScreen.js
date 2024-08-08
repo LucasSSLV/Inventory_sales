@@ -6,7 +6,7 @@ import {
   ImageBackground,
 } from "react-native";
 import moneyImage from "../../../assets/images/money.jpeg";
-import stylesGeneric from "../style/inputStyle/styleGeneric";
+import stylesGeneric from "../style/stylesGenerics/styleGeneric";
 import styles from "./styles";
 
 export default function HomeScreen({ navigation }) {

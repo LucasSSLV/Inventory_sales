@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, Button, Alert, ImageBackground } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import styles from "../style/inputStyle/styleGeneric";
+import styles from "../style/stylesGenerics/styleGeneric";
 import styleView from "./styleView";
 import stylePicker from "../style/pickerStyle/stylePicker";
 import moneyImage from "../../../assets/images/money.jpeg";

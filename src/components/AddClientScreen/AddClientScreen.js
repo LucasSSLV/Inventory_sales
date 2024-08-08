@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, Button, Alert, ImageBackground } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import styles from "../style/inputStyle/styleGeneric";
+import styles from "../style/stylesGenerics/styleGeneric";
 import moneyImage from "../../../assets/images/money.jpeg";
 
 export default function AddClientScreen({ navigation }) {
