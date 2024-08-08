@@ -16,6 +16,7 @@
     "@react-navigation/stack": "^6.4.1",
     "expo": "~51.0.24",
     "expo-status-bar": "~1.12.1",
+    "framework7": "^8.3.3",
     "inventory-of-sales": "file:",
     "react": "18.2.0",
     "react-dom": "18.2.0",
