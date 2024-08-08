@@ -2,8 +2,13 @@ import { StyleSheet } from "react-native";
 
 const styleView = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 16,
     backgroundColor: "#FFF",
+  },
+  viewbuton: {
+    justifyContent: "space-between",
+    margin: 10,
   },
   totalDebtText: {
     width: "100%",
@@ -20,11 +25,17 @@ const styleView = StyleSheet.create({
     marginBottom: 20,
     padding: 10,
     backgroundColor: "#F5F5F5",
+    justifyContent: "center",
   },
   purchaseText: {
     fontSize: 18,
     marginBottom: 5,
     color: "black",
+  },
+  clientNotFound: {
+    fontSize: 20,
+    textAlign: "center",
+    color: "red",
   },
 });
 
