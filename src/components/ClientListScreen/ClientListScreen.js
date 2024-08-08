@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Button, Alert, FlatList } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import styleView from "@components/ViewDebtsScreen/styleView";
 
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -53,7 +54,7 @@ export default function ClientListScreen({ navigation }) {
   };
 
   const renderItem = ({ item }) => (
-    <View style={{ padding: 10, borderBottomWidth: 1 }}>
+    <View style={styleView.purchaseContainer}>
       <Text>Nome: {item.name}</Text>
       <Text>Contato: {item.contact}</Text>
       <Button

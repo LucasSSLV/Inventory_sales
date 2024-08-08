@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput, Button, Alert } from "react-native";
+import { View, TextInput, Button, Alert, ImageBackground } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import styles from "../style/inputStyle/styles";
+import moneyImage from "../../../assets/images/money.jpeg";
 
 export default function AddClientScreen({ navigation }) {
   const [name, setName] = useState("");
@@ -25,18 +27,24 @@ export default function AddClientScreen({ navigation }) {
   };
 
   return (
-    <View>
-      <TextInput
-        placeholder="Nome do Cliente"
-        value={name}
-        onChangeText={setName}
-      />
-      <TextInput
-        placeholder="Contato"
-        value={contact}
-        onChangeText={setContact}
-      />
-      <Button title="Adicionar Cliente" onPress={handleAddClient} />
-    </View>
+    <ImageBackground source={moneyImage} style={styles.backgroundImage}>
+      <View style={styles.container}>
+        <TextInput
+          style={styles.inputArea}
+          placeholderTextColor="white"
+          placeholder="Nome do Cliente"
+          value={name}
+          onChangeText={setName}
+        />
+        <TextInput
+          style={styles.inputArea}
+          placeholderTextColor="white"
+          placeholder="Contato"
+          value={contact}
+          onChangeText={setContact}
+        />
+        <Button title="Adicionar Cliente" onPress={handleAddClient} />
+      </View>
+    </ImageBackground>
   );
 }
