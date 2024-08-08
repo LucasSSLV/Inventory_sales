@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, TextInput, Button, Alert } from "react-native";
+import { View, TextInput, Button, Alert, ImageBackground } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import styles from "../style/inputStyle/styleGeneric";
+import stylePicker from "../style/pickerStyle/stylePicker";
+import moneyImage from "../../../assets/images/money.jpeg";
 
 export default function AddPurchaseScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -49,22 +52,32 @@ export default function AddPurchaseScreen({ navigation }) {
   };
 
   return (
-    <View>
-      <Picker
-        selectedValue={selectedClient}
-        onValueChange={(itemValue) => setSelectedClient(itemValue)}
-      >
-        {clients.map((client, index) => (
-          <Picker.Item key={index} label={client.name} value={client.name} />
-        ))}
-      </Picker>
-      <TextInput
-        placeholder="Valor da Compra"
-        value={value}
-        onChangeText={setValue}
-        keyboardType="numeric"
-      />
-      <Button title="Registrar Compra" onPress={handleAddPurchase} />
-    </View>
+    <ImageBackground source={moneyImage} style={styles.backgroundImage}>
+      <View style={styles.container}>
+        <Picker
+          style={stylePicker.pickerArea}
+          selectedValue={selectedClient}
+          onValueChange={(itemValue) => setSelectedClient(itemValue)}
+        >
+          {clients.map((client, index) => (
+            <Picker.Item
+              style={stylePicker.pickerAreaClient}
+              key={index}
+              label={client.name}
+              value={client.name}
+            />
+          ))}
+        </Picker>
+        <TextInput
+          style={styles.inputArea}
+          placeholderTextColor="white"
+          placeholder="Valor da Compra"
+          value={value}
+          onChangeText={setValue}
+          keyboardType="numeric"
+        />
+        <Button title="Registrar Compra" onPress={handleAddPurchase} />
+      </View>
+    </ImageBackground>
   );
 }
