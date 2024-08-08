@@ -1,38 +1,44 @@
 import React from "react";
-import { View, Button, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
+import moneyImage from "../../../assets/images/money.jpeg";
+import stylesGeneric from "../style/inputStyle/styleGeneric";
 import styles from "./styles";
 
 export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Cadastrar Cliente"
+    <ImageBackground source={moneyImage} style={stylesGeneric.backgroundImage}>
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={[styles.button, styles.button1]}
           onPress={() => navigation.navigate("AddClient")}
-          color="#6200EE" // Cor do botão
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Registrar Compra"
+        >
+          <Text style={styles.buttonText}>Cadastrar Cliente</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.button2]}
           onPress={() => navigation.navigate("AddPurchase")}
-          color="#03DAC5"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Consultar Débitos"
+        >
+          <Text style={styles.buttonText}>Registrar Compra</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.button3]}
           onPress={() => navigation.navigate("ViewDebts")}
-          color="#BB86FC"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Consultar Clientes"
+        >
+          <Text style={styles.buttonText}>Consultar Débitos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.button4]}
           onPress={() => navigation.navigate("ClientList")}
-          color="#3700B3"
-        />
+        >
+          <Text style={styles.buttonText}>Consultar Clientes</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
+

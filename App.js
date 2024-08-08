@@ -7,14 +7,13 @@ import AddClientScreen from "./src/components/AddClientScreen/AddClientScreen";
 import AddPurchaseScreen from "./src/components/AddPurchaseScreen/AddPurchaseSdreen";
 import ViewDebtsScreen from "./src/components/ViewDebtsScreen/ViewDebtsScreen";
 import ClientListScreen from "@components/ClientListScreen/ClientListScreen";
-import { ImageBackground, StyleSheet } from "react-native";
-import money from "./assets/images/money.jpeg";
+import { View, StyleSheet } from "react-native";
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <ImageBackground source={money} style={style.background}>
-      <NavigationContainer>
+    <NavigationContainer>
+      {/* <View style={styles.container}> */}
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Inventory Sales" component={HomeScreen} />
           <Stack.Screen name="AddClient" component={AddClientScreen} />
@@ -22,14 +21,16 @@ export default function App() {
           <Stack.Screen name="ViewDebts" component={ViewDebtsScreen} />
           <Stack.Screen name="ClientList" component={ClientListScreen} />
         </Stack.Navigator>
-      </NavigationContainer>
-    </ImageBackground>
+      {/* </View> */}
+    </NavigationContainer>
   );
 }
 
-const style = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: "cover",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//     padding: 16,
+//   },
+// });
