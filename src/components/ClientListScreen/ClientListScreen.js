@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Button, Alert, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  Alert,
+  FlatList,
+  ImageBackground,
+} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
+import money from "../../../assets/images/money.jpeg";
+import styles from "../style/inputStyle/styles";
 
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -65,16 +74,18 @@ export default function ClientListScreen({ navigation }) {
   );
 
   return (
-    <View>
-      <FlatList
-        data={clients}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.name}
-      />
-      <Button
-        title="Voltar para a Tela Principal"
-        onPress={() => navigation.goBack()}
-      />
-    </View>
+    <ImageBackground source={money} style={styles.backgroundImage}>
+      <View>
+        <FlatList
+          data={clients}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.name}
+        />
+        <Button
+          title="Voltar para a Tela Principal"
+          onPress={() => navigation.goBack()}
+        />
+      </View>
+    </ImageBackground>
   );
 }
