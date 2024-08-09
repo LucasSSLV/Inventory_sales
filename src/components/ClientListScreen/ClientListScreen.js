@@ -10,7 +10,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
 import money from "../../../assets/images/money.jpeg";
-import styles from "../style/inputStyle/styleGeneric";
+import styles from "../style/stylesGenerics/styleGeneric";
 
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -64,8 +64,8 @@ export default function ClientListScreen({ navigation }) {
 
   const renderItem = ({ item }) => (
     <View style={styleView.purchaseContainer}>
-      <Text>Nome: {item.name}</Text>
-      <Text>Contato: {item.contact}</Text>
+      <Text style={styleView.purchaseText}>Nome: {item.name}</Text>
+      <Text style={styleView.purchaseText}>Contato: {item.contact}</Text>
       <Button
         title="Excluir Cliente"
         onPress={() => handleDeleteClient(item.name)}

@@ -7,7 +7,6 @@ import AddClientScreen from "./src/components/AddClientScreen/AddClientScreen";
 import AddPurchaseScreen from "./src/components/AddPurchaseScreen/AddPurchaseSdreen";
 import ViewDebtsScreen from "./src/components/ViewDebtsScreen/ViewDebtsScreen";
 import ClientListScreen from "@components/ClientListScreen/ClientListScreen";
-import { View, StyleSheet } from "react-native";
 const Stack = createStackNavigator();
 
 export default function App() {
