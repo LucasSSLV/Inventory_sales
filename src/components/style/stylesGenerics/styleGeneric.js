@@ -2,6 +2,11 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   backgroundImage: {
+    width: "100%",
+    height: "100%",
+    zIndex: -1,
+    position: "absolute",
+    backgroundColor: "#627254",
     flex: 1,
     resizeMode: "cover",
   },

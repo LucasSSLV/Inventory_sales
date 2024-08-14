@@ -14,22 +14,13 @@ export default function App() {
     <NavigationContainer>
       {/* <View style={styles.container}> */}
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Inventory Sales" component={HomeScreen} />
-          <Stack.Screen name="AddClient" component={AddClientScreen} />
-          <Stack.Screen name="AddPurchase" component={AddPurchaseScreen} />
-          <Stack.Screen name="ViewDebts" component={ViewDebtsScreen} />
-          <Stack.Screen name="ClientList" component={ClientListScreen} />
+          <Stack.Screen options={{headerShown: false}} name="Inventory Sales" component={HomeScreen} />
+          <Stack.Screen options={{headerShown: false}} name="AddClient" component={AddClientScreen} />
+          <Stack.Screen options={{headerShown: false}} name="AddPurchase" component={AddPurchaseScreen} />
+          <Stack.Screen options={{headerShown: false}} name="ViewDebts" component={ViewDebtsScreen} />
+          <Stack.Screen options={{headerShown: false}} name="ClientList" component={ClientListScreen} />
         </Stack.Navigator>
       {/* </View> */}
     </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     padding: 16,
-//   },
-// });
