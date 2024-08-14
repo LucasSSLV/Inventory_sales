@@ -11,6 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
 import money from "../../../assets/images/money.jpeg";
 import styles from "../style/stylesGenerics/styleGeneric";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -74,18 +75,20 @@ export default function ClientListScreen({ navigation }) {
   );
 
   return (
-    <ImageBackground source={money} style={styles.backgroundImage}>
-      <View>
-        <FlatList
-          data={clients}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.name}
-        />
-        <Button
-          title="Voltar para a Tela Principal"
-          onPress={() => navigation.goBack()}
-        />
-      </View>
-    </ImageBackground>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground style={styles.backgroundImage}>
+        <View>
+          <FlatList
+            data={clients}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.name}
+          />
+          <Button
+            title="Voltar para a Tela Principal"
+            onPress={() => navigation.goBack()}
+          />
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 }

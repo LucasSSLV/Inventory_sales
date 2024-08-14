@@ -13,6 +13,7 @@ import styles from "../style/stylesGenerics/styleGeneric";
 import styleView from "./styleView";
 import moneyImage from "../../../assets/images/money.jpeg";
 import stylePicker from "@components/style/pickerStyle/stylePicker";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ViewDebtsScreen() {
   const [clients, setClients] = useState([]);
@@ -147,45 +148,47 @@ export default function ViewDebtsScreen() {
   );
 
   return (
-    <ImageBackground source={moneyImage} style={styles.backgroundImage}>
-      <View style={styles.container}>
-        <Picker
-          style={stylePicker.pickerArea}
-          selectedValue={selectedClient}
-          onValueChange={(itemValue) => setSelectedClient(itemValue)}
-        >
-          {clients.map((client, index) => (
-            <Picker.Item
-              style={stylePicker.pickerAreaClient}
-              key={index}
-              label={client.name}
-              value={client.name}
-            />
-          ))}
-        </Picker>
-
-        {selectedClient ? (
-          <>
-            <Text style={styleView.totalDebtText}>
-              Total Devido: {totalDebt.toFixed(2)}
-            </Text>
-            <View style={styleView.container}>
-              <FlatList data={clientPurchases} renderItem={renderItem} />
-            </View>
-            <View style={styleView.viewbuton}>
-              <Button
-                title="Fechar Débitos"
-                onPress={() => setSelectedClient("")}
+    <SafeAreaView style={{ flex: 1 }}>
+      <ImageBackground style={styles.backgroundImage}>
+        <View style={styles.container}>
+          <Picker
+            style={stylePicker.pickerArea}
+            selectedValue={selectedClient}
+            onValueChange={(itemValue) => setSelectedClient(itemValue)}
+          >
+            {clients.map((client, index) => (
+              <Picker.Item
+                style={stylePicker.pickerAreaClient}
+                key={index}
+                label={client.name}
+                value={client.name}
               />
-            </View>
-          </>
-        ) : null}
+            ))}
+          </Picker>
 
-        <Button
-          title="Excluir Todas as Compras"
-          onPress={handleDeleteAllPurchases}
-        />
-      </View>
-    </ImageBackground>
+          {selectedClient ? (
+            <>
+              <Text style={styleView.totalDebtText}>
+                Total Devido: {totalDebt.toFixed(2)}
+              </Text>
+              <View style={styleView.container}>
+                <FlatList data={clientPurchases} renderItem={renderItem} />
+              </View>
+              <View style={styleView.viewbuton}>
+                <Button
+                  title="Fechar Débitos"
+                  onPress={() => setSelectedClient("")}
+                />
+              </View>
+            </>
+          ) : null}
+
+          <Button
+            title="Excluir Todas as Compras"
+            onPress={handleDeleteAllPurchases}
+          />
+        </View>
+      </ImageBackground>
+    </SafeAreaView>
   );
 }

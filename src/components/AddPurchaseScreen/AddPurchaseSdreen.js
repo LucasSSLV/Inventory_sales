@@ -5,6 +5,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../style/stylesGenerics/styleGeneric";
 import stylePicker from "../style/pickerStyle/stylePicker";
 import moneyImage from "../../../assets/images/money.jpeg";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddPurchaseScreen({ navigation }) {
   const [clients, setClients] = useState([]);
@@ -52,32 +53,34 @@ export default function AddPurchaseScreen({ navigation }) {
   };
 
   return (
-    <ImageBackground source={moneyImage} style={styles.backgroundImage}>
-      <View style={styles.container}>
-        <Picker
-          style={stylePicker.pickerArea}
-          selectedValue={selectedClient}
-          onValueChange={(itemValue) => setSelectedClient(itemValue)}
-        >
-          {clients.map((client, index) => (
-            <Picker.Item
-              style={stylePicker.pickerAreaClient}
-              key={index}
-              label={client.name}
-              value={client.name}
-            />
-          ))}
-        </Picker>
-        <TextInput
-          style={styles.inputArea}
-          placeholderTextColor="white"
-          placeholder="Valor da Compra"
-          value={value}
-          onChangeText={setValue}
-          keyboardType="numeric"
-        />
-        <Button title="Registrar Compra" onPress={handleAddPurchase} />
-      </View>
+      <SafeAreaView style={{ flex: 1 }}>
+    <ImageBackground style={styles.backgroundImage}>
+        <View style={styles.container}>
+          <Picker
+            style={stylePicker.pickerArea}
+            selectedValue={selectedClient}
+            onValueChange={(itemValue) => setSelectedClient(itemValue)}
+          >
+            {clients.map((client, index) => (
+              <Picker.Item
+                style={stylePicker.pickerAreaClient}
+                key={index}
+                label={client.name}
+                value={client.name}
+              />
+            ))}
+          </Picker>
+          <TextInput
+            style={styles.inputArea}
+            placeholderTextColor="white"
+            placeholder="Valor da Compra"
+            value={value}
+            onChangeText={setValue}
+            keyboardType="numeric"
+          />
+          <Button title="Registrar Compra" onPress={handleAddPurchase} />
+        </View>
     </ImageBackground>
+      </SafeAreaView>
   );
 }

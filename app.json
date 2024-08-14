@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "inventory sales",
-    "slug": "inventory sales",
+    "name": "inventory_sales",
+    "slug": "inventory_sales",
     "owner": "sucodefrutyss19",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -27,7 +27,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "546b6e1b-29fe-495f-923c-ac58cb8d1c25"
+        "projectId": "d9c1b06e-8426-452f-87e1-d980c5fc95a3"
       }
     }
   }

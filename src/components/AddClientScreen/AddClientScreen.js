@@ -3,6 +3,7 @@ import { View, TextInput, Button, Alert, ImageBackground } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../style/stylesGenerics/styleGeneric";
 import moneyImage from "../../../assets/images/money.jpeg";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddClientScreen({ navigation }) {
   const [name, setName] = useState("");
@@ -27,24 +28,26 @@ export default function AddClientScreen({ navigation }) {
   };
 
   return (
-    <ImageBackground source={moneyImage} style={styles.backgroundImage}>
-      <View style={styles.container}>
-        <TextInput
-          style={styles.inputArea}
-          placeholderTextColor="white"
-          placeholder="Nome do Cliente"
-          value={name}
-          onChangeText={setName}
-        />
-        <TextInput
-          style={styles.inputArea}
-          placeholderTextColor="white"
-          placeholder="Contato"
-          value={contact}
-          onChangeText={setContact}
-        />
-        <Button title="Adicionar Cliente" onPress={handleAddClient} />
-      </View>
+      <SafeAreaView style={{ flex: 1 }}>
+    <ImageBackground style={styles.backgroundImage}>
+        <View style={styles.container}>
+          <TextInput
+            style={styles.inputArea}
+            placeholderTextColor="white"
+            placeholder="Nome do Cliente"
+            value={name}
+            onChangeText={setName}
+          />
+          <TextInput
+            style={styles.inputArea}
+            placeholderTextColor="white"
+            placeholder="Contato"
+            value={contact}
+            onChangeText={setContact}
+          />
+          <Button title="Adicionar Cliente" onPress={handleAddClient} />
+        </View>
     </ImageBackground>
+      </SafeAreaView>
   );
 }
