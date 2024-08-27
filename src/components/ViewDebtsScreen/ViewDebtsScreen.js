@@ -11,7 +11,6 @@ import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../style/stylesGenerics/styleGeneric";
 import styleView from "./styleView";
-import moneyImage from "../../../assets/images/money.jpeg";
 import stylePicker from "@components/style/pickerStyle/stylePicker";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -139,16 +138,18 @@ export default function ViewDebtsScreen() {
       <Text style={styleView.purchaseText}>
         Data: {new Date(item.date).toLocaleDateString()}
       </Text>
-      <Text style={styleView.purchaseText}>Valor: {item.value.toFixed(2)}</Text>
+      <Text style={styleView.purchaseTextValue}>Valor: {item.value.toFixed(2)}</Text>
+     <View style={styleView.viewbuton}>
       <Button
         title="Excluir Compra"
         onPress={() => handleDeletePurchase(index)}
       />
+      </View>
     </View>
   );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    // <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground style={styles.backgroundImage}>
         <View style={styles.container}>
           <Picker
@@ -182,13 +183,14 @@ export default function ViewDebtsScreen() {
               </View>
             </>
           ) : null}
-
-          <Button
-            title="Excluir Todas as Compras"
-            onPress={handleDeleteAllPurchases}
-          />
+          <View style={styleView.viewbuton}>
+            <Button
+              title="EXCLUIR TUDO"
+              onPress={handleDeleteAllPurchases}
+            />
+          </View>
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    // </SafeAreaView>
   );
 }

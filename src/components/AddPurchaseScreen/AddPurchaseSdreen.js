@@ -4,7 +4,7 @@ import { Picker } from "@react-native-picker/picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "../style/stylesGenerics/styleGeneric";
 import stylePicker from "../style/pickerStyle/stylePicker";
-import moneyImage from "../../../assets/images/money.jpeg";
+// import moneyImage from "../../../assets/images/money.jpeg";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AddPurchaseScreen({ navigation }) {
@@ -72,7 +72,7 @@ export default function AddPurchaseScreen({ navigation }) {
           </Picker>
           <TextInput
             style={styles.inputArea}
-            placeholderTextColor="white"
+            placeholderTextColor="rgba(000, 0, 0, 0.6)"
             placeholder="Valor da Compra"
             value={value}
             onChangeText={setValue}

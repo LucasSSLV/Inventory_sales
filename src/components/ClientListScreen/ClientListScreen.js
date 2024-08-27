@@ -9,10 +9,9 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
-import money from "../../../assets/images/money.jpeg";
-import styles from "../style/stylesGenerics/styleGeneric";
+import styles from "./styles";
+import stylesGenerics from "../style/stylesGenerics/styleGeneric";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
 
@@ -64,31 +63,36 @@ export default function ClientListScreen({ navigation }) {
   };
 
   const renderItem = ({ item }) => (
-    <View style={styleView.purchaseContainer}>
-      <Text style={styleView.purchaseText}>Nome: {item.name}</Text>
-      <Text style={styleView.purchaseText}>Contato: {item.contact}</Text>
-      <Button
-        title="Excluir Cliente"
-        onPress={() => handleDeleteClient(item.name)}
-      />
+    <View style={styles.viewGlobal}>
+      <Text>Nome: {item.name}</Text>
+      <Text>Contato: {item.contact}</Text>
+      <View style={styleView.viewbuton}>
+        <Button
+          title="Excluir Cliente"
+          onPress={() => handleDeleteClient(item.name)}
+        />
+      </View>
     </View>
   );
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ImageBackground style={styles.backgroundImage}>
-        <View>
-          <FlatList
-            data={clients}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.name}
-          />
+    // <SafeAreaView style={{ flex: 1 }}>
+    <ImageBackground style={stylesGenerics.backgroundImage}>
+      <View style={styles.viewClient}>
+        <FlatList
+        // style={{ width: "100%", padding: 10}}
+          data={clients}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.name}
+        />
+        <View style={styles.viewbuton}>
           <Button
             title="Voltar para a Tela Principal"
             onPress={() => navigation.goBack()}
           />
         </View>
-      </ImageBackground>
-    </SafeAreaView>
+      </View>
+    </ImageBackground>
+    // </SafeAreaView>
   );
 }

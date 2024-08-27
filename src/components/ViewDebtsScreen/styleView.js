@@ -3,34 +3,48 @@ import { StyleSheet } from "react-native";
 const styleView = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor: "#FFF",
+    width: "80%",
+    // height: "100%",
+    borderRadius: 6,
   },
   viewbuton: {
-    justifyContent: "space-between",
+    justifyContent: "center",
     margin: 10,
+    width: "40%",
   },
   totalDebtText: {
-    width: "100%",
+    width: "50%",
     padding: 10,
+    textAlign: "center",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 10,
+    backgroundColor: "black", // Cor de fundo do total devido
+    color: "red", // Cor para destacar o total devido
+    borderRadius: 6,
+  },
+  purchaseContainer: {
+    flex: 1,
+    marginBottom: 10,
+    alignItems: "center",
+    width: "100%",
+    margin: 0,
+    backgroundColor: "rgba(00, 255, 255, 0.3)",
+    borderRadius: 10,
+  },
+  purchaseText: {
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "condensed",
+    marginTop: 5,
+    color: "black",
+  },
+  purchaseTextValue: {
     textAlign: "center",
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 20,
-    backgroundColor: "black", // Cor de fundo do total devido
-    color: "white", // Cor para destacar o total devido
-  },
-  purchaseContainer: {
-    height: "auto",
-    marginBottom: 20,
-    padding: 10,
-    backgroundColor: "#F5F5F5",
-    justifyContent: "center",
-  },
-  purchaseText: {
-    fontSize: 18,
-    marginBottom: 5,
-    color: "black",
+    marginTop: 5,
+    color: "red",
   },
   clientNotFound: {
     fontSize: 20,
