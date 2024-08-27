@@ -9,10 +9,8 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import styleView from "@components/ViewDebtsScreen/styleView";
-import money from "../../../assets/images/money.jpeg";
 import styles from "../style/stylesGenerics/styleGeneric";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 export default function ClientListScreen({ navigation }) {
   const [clients, setClients] = useState([]);
 
@@ -77,8 +75,9 @@ export default function ClientListScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground style={styles.backgroundImage}>
-        <View>
+        <View style={styleView.container}>
           <FlatList
+          style={{ width: "100%", padding: 10, marginTop: 20 }}
             data={clients}
             renderItem={renderItem}
             keyExtractor={(item) => item.name}

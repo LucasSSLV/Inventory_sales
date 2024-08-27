@@ -33,14 +33,14 @@ export default function AddClientScreen({ navigation }) {
         <View style={styles.container}>
           <TextInput
             style={styles.inputArea}
-            placeholderTextColor="white"
+            placeholderTextColor="rgba(000, 0, 0, 0.6)"
             placeholder="Nome do Cliente"
             value={name}
             onChangeText={setName}
           />
           <TextInput
             style={styles.inputArea}
-            placeholderTextColor="white"
+            placeholderTextColor="rgba(000, 0, 0, 0.6)"
             placeholder="Contato"
             value={contact}
             onChangeText={setContact}

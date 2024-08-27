@@ -140,10 +140,12 @@ export default function ViewDebtsScreen() {
         Data: {new Date(item.date).toLocaleDateString()}
       </Text>
       <Text style={styleView.purchaseText}>Valor: {item.value.toFixed(2)}</Text>
+     <View style={styleView.viewbuton}>
       <Button
         title="Excluir Compra"
         onPress={() => handleDeletePurchase(index)}
       />
+      </View>
     </View>
   );
 
@@ -182,11 +184,12 @@ export default function ViewDebtsScreen() {
               </View>
             </>
           ) : null}
-
-          <Button
-            title="Excluir Todas as Compras"
-            onPress={handleDeleteAllPurchases}
-          />
+          <View style={styleView.viewbuton}>
+            <Button
+              title="EXCLUIR TUDO"
+              onPress={handleDeleteAllPurchases}
+            />
+          </View>
         </View>
       </ImageBackground>
     </SafeAreaView>

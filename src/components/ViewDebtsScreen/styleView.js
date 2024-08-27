@@ -3,31 +3,36 @@ import { StyleSheet } from "react-native";
 const styleView = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    width: "100%",
     backgroundColor: "#FFF",
   },
   viewbuton: {
-    justifyContent: "space-between",
+    justifyContent: "center",
     margin: 10,
+    width: "40%",
   },
   totalDebtText: {
-    width: "100%",
+    width: "50%",
     padding: 10,
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 10,
     backgroundColor: "black", // Cor de fundo do total devido
-    color: "white", // Cor para destacar o total devido
+    color: "red", // Cor para destacar o total devido
+    borderRadius: 6,
   },
   purchaseContainer: {
-    height: "auto",
+    flex: 1,
+    alignItems: "center",
+    height: 40,
     marginBottom: 20,
     padding: 10,
     backgroundColor: "#F5F5F5",
     justifyContent: "center",
   },
   purchaseText: {
+    textAlign: "center",
     fontSize: 18,
     marginBottom: 5,
     color: "black",
