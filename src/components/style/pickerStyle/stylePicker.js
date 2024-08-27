@@ -2,19 +2,22 @@ import { StyleSheet } from "react-native";
 
 const stylePicker = StyleSheet.create({
   pickerArea: {
-    alignItems: "center",
-    backgroundColor: "green", // Cor de fundo do Picker
-    color: "black", // Cor do texto do Picker
     width: "80%",
+    alignSelf: "center", // Centraliza o Picker horizontalmente
+    backgroundColor: "#E0F7FA", // Cor de fundo suave e agradável
+    borderRadius: 10, // Arredonda os cantos do Picker
+    paddingVertical: 10, // Espaçamento interno vertical
+    marginVertical: 15, // Espaçamento externo vertical para separar de outros elementos
+    borderColor: "#00796B", // Cor da borda para destacar o Picker
+    borderWidth: 1, // Largura da borda
   },
   pickerAreaClient: {
-    // height: 50,
-    backgroundColor: "#F0F0F0", // Cor de fundo do Picker
-    borderRadius: 8, // Bordas arredondadas
-    borderColor: "#CCCCCC", // Cor da borda
-    borderWidth: 1, // Largura da borda
-    // paddingHorizontal: 10, // Espaçamento interno horizontal
-    color: "black", // Cor do texto do Picker
+    color: "black", // Cor do texto do Picker.Item
+    fontSize: 20, // Tamanho da fonte para melhor legibilidade
+    backgroundColor: "#FCF8F3", // Cor de fundo do Picker.Item
+    paddingVertical: 8, // Espaçamento interno vertical
+    paddingHorizontal: 12, // Espaçamento interno horizontal
+    borderRadius: 5, // Arredondamento para os itens do Picker
   },
 });
 
