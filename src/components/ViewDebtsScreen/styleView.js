@@ -3,8 +3,9 @@ import { StyleSheet } from "react-native";
 const styleView = StyleSheet.create({
   container: {
     flex: 1,
-    width: "100%",
-    backgroundColor: "#FFF",
+    width: "80%",
+    // height: "100%",
+    borderRadius: 6,
   },
   viewbuton: {
     justifyContent: "center",
@@ -24,18 +25,26 @@ const styleView = StyleSheet.create({
   },
   purchaseContainer: {
     flex: 1,
+    marginBottom: 10,
     alignItems: "center",
-    height: 40,
-    marginBottom: 20,
-    padding: 10,
-    backgroundColor: "#F5F5F5",
-    justifyContent: "center",
+    width: "100%",
+    margin: 0,
+    backgroundColor: "rgba(00, 255, 255, 0.3)",
+    borderRadius: 10,
   },
   purchaseText: {
     textAlign: "center",
-    fontSize: 18,
-    marginBottom: 5,
+    fontSize: 20,
+    fontWeight: "condensed",
+    marginTop: 5,
     color: "black",
+  },
+  purchaseTextValue: {
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 5,
+    color: "red",
   },
   clientNotFound: {
     fontSize: 20,
