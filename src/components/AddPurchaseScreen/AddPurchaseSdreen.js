@@ -53,7 +53,7 @@ export default function AddPurchaseScreen({ navigation }) {
   };
 
   return (
-      <SafeAreaView style={{ flex: 1 }}>
+      // <SafeAreaView style={{ flex: 1 }}>
     <ImageBackground style={styles.backgroundImage}>
         <View style={styles.container}>
           <Picker
@@ -81,6 +81,6 @@ export default function AddPurchaseScreen({ navigation }) {
           <Button title="Registrar Compra" onPress={handleAddPurchase} />
         </View>
     </ImageBackground>
-      </SafeAreaView>
+      // </SafeAreaView>
   );
 }

@@ -28,7 +28,7 @@ export default function AddClientScreen({ navigation }) {
   };
 
   return (
-      <SafeAreaView style={{ flex: 1 }}>
+      // <SafeAreaView style={{ flex: 1 }}>
     <ImageBackground style={styles.backgroundImage}>
         <View style={styles.container}>
           <TextInput
@@ -48,6 +48,6 @@ export default function AddClientScreen({ navigation }) {
           <Button title="Adicionar Cliente" onPress={handleAddClient} />
         </View>
     </ImageBackground>
-      </SafeAreaView>
+      // </SafeAreaView>
   );
 }

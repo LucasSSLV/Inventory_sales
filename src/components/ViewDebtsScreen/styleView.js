@@ -35,7 +35,7 @@ const styleView = StyleSheet.create({
   purchaseText: {
     textAlign: "center",
     fontSize: 20,
-    fontWeight: "condensed",
+    fontWeight: "bold",
     marginTop: 5,
     color: "black",
   },
