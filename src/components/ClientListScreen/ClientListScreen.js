@@ -64,16 +64,18 @@ export default function ClientListScreen({ navigation }) {
   };
 
   const renderItem = ({ item }) => (
-    <View style={styles.viewGlobal}>
-      <Text style={styleView.purchaseText}>Nome: {item.name}</Text>
-      <Text style={styleView.purchaseText}>Contato: {item.contact}</Text>
-      <TouchableOpacity
-        style={styles.viewButton} // Certifique-se de ajustar o estilo para combinar com o TouchableOpacity
-        onPress={() => handleDeleteClient(item.name)}
-      >
-        <Text style={styles.buttonText}>Excluir Cliente</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.viewGlobal}>
+        <Text style={styleView.purchaseText}>Nome: {item.name}</Text>
+        <Text style={styleView.purchaseText}>Contato: {item.contact}</Text>
+        <TouchableOpacity
+          style={styles.viewButton} // Certifique-se de ajustar o estilo para combinar com o TouchableOpacity
+          onPress={() => handleDeleteClient(item.name)}
+        >
+          <Text style={styles.buttonText}>Excluir Cliente</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 
   return (
@@ -84,14 +86,15 @@ export default function ClientListScreen({ navigation }) {
           renderItem={renderItem}
           keyExtractor={(item) => item.name}
         />
-        {/* <View style={styles.viewGlobal}> */}
-          <TouchableOpacity
-            style={styles.viewButtonBack} // Certifique-se de ajustar o estilo para combinar com o TouchableOpacity
-            onPress={() => navigation.goBack()}
-          >
-            <Text style={styles.buttonText}>Voltar para a Tela Principal</Text>
-          </TouchableOpacity>
-        {/* </View> */}
+
+        <TouchableOpacity
+          style={styles.viewButtonBack}
+          onPress={() => navigation.goBack()}
+        >
+          <Text style={styles.buttonBackText}>
+            Voltar para a Tela Principal
+          </Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );

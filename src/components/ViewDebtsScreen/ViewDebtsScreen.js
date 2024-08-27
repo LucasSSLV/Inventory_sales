@@ -134,24 +134,28 @@ export default function ViewDebtsScreen() {
   };
 
   const renderItem = ({ item, index }) => (
-    <View style={styleView.purchaseContainer}>
-      <Text style={styleView.purchaseText}>
-        Data: {new Date(item.date).toLocaleDateString()}
-      </Text>
-      <Text style={styleView.purchaseTextValue}>Valor: {item.value.toFixed(2)}</Text>
-     <View style={styleView.viewbuton}>
-      <Button
-        title="Excluir Compra"
-        onPress={() => handleDeletePurchase(index)}
-      />
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styleView.purchaseContainer}>
+        <Text style={styleView.purchaseText}>
+          Data: {new Date(item.date).toLocaleDateString()}
+        </Text>
+        <Text style={styleView.purchaseTextValue}>
+          Valor: {item.value.toFixed(2)}
+        </Text>
+        <View style={styleView.viewbuton}>
+          <Button
+            title="Excluir Compra"
+            onPress={() => handleDeletePurchase(index)}
+          />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 
   return (
-    // <SafeAreaView style={{ flex: 1 }}>
-      <ImageBackground style={styles.backgroundImage}>
-        <View style={styles.container}>
+    <ImageBackground style={styles.backgroundImage}>
+      <View style={styles.container}>
+        {!selectedClient && (
           <Picker
             style={stylePicker.pickerArea}
             selectedValue={selectedClient}
@@ -166,31 +170,29 @@ export default function ViewDebtsScreen() {
               />
             ))}
           </Picker>
+        )}
 
-          {selectedClient ? (
-            <>
+        {selectedClient ? (
+          <>
+            <View style={styleView.viewDebits}>
               <Text style={styleView.totalDebtText}>
                 Total Devido: {totalDebt.toFixed(2)}
               </Text>
-              <View style={styleView.container}>
-                <FlatList data={clientPurchases} renderItem={renderItem} />
-              </View>
-              <View style={styleView.viewbuton}>
-                <Button
-                  title="Fechar Débitos"
-                  onPress={() => setSelectedClient("")}
-                />
-              </View>
-            </>
-          ) : null}
+            </View>
+            <View style={styleView.container}>
+              <FlatList data={clientPurchases} renderItem={renderItem} />
+            </View>
+            <View style={styleView.viewbuton}>
+              <Button title="Voltar" onPress={() => setSelectedClient("")} />
+            </View>
+          </>
+        ) : null}
+        {selectedClient && (
           <View style={styleView.viewbuton}>
-            <Button
-              title="EXCLUIR TUDO"
-              onPress={handleDeleteAllPurchases}
-            />
+            <Button title="EXCLUIR TUDO" onPress={handleDeleteAllPurchases} />
           </View>
-        </View>
-      </ImageBackground>
-    // </SafeAreaView>
+        )}
+      </View>
+    </ImageBackground>
   );
 }

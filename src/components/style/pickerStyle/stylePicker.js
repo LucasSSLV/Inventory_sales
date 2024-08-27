@@ -13,7 +13,7 @@ const stylePicker = StyleSheet.create({
   },
   pickerAreaClient: {
     color: "black", // Cor do texto do Picker.Item
-    fontSize: 20, // Tamanho da fonte para melhor legibilidade
+    fontSize: 30, // Tamanho da fonte para melhor legibilidade
     backgroundColor: "#FCF8F3", // Cor de fundo do Picker.Item
     paddingVertical: 8, // Espaçamento interno vertical
     paddingHorizontal: 12, // Espaçamento interno horizontal

@@ -19,19 +19,19 @@ const styles = StyleSheet.create({
         alignItems: "center",
       },
       button1: {
-        backgroundColor: "#F6EACB",
+        backgroundColor: "#FCF8F3",
       },
       button2: {
-        backgroundColor: "#F6EACB",
+        backgroundColor: "#FCF8F3",
       },
       button3: {
-        backgroundColor: "#F6EACB",
+        backgroundColor: "#FCF8F3",
       },
       button4: {
-        backgroundColor: "#F6EACB",
+        backgroundColor: "#FCF8F3",
       },
       buttonText: {
-        color: "#00215E",
+        color: "black",
         fontSize: 25,
         fontWeight: "bold",
       },

@@ -3,11 +3,12 @@ import { StyleSheet } from "react-native";
 const styleView = StyleSheet.create({
   viewGlobal: {
     flex: 1,
-    height: 120,
+    height: 130,
     margin: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(0, 255, 255, 0.9)",
+    backgroundColor: "#FCF8F3",
+    borderRadius: 10,
   },
   viewClient: {
     flex: 1,
@@ -15,6 +16,11 @@ const styleView = StyleSheet.create({
   buttonText: {
     color: "white",
     fontSize: 20,
+    fontWeight: "bold",
+  },
+  buttonBackText: {
+    color: "white",
+    fontSize: 30,
     fontWeight: "bold",
   },
   viewButton: {
@@ -30,10 +36,11 @@ const styleView = StyleSheet.create({
   viewButtonBack: {
     margin: 10,
     height: 50,
-    backgroundColor: "rgba(255, 0, 0, 0.7)",
+    backgroundColor: "#9DBDFF",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 10,
+    // fontSize: 20,
+    borderRadius: 20,
     fontWeight: "bold",
   },
 });
