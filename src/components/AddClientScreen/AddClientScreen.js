@@ -41,6 +41,7 @@ export default function AddClientScreen({ navigation }) {
           placeholder="Contato"
           value={contact}
           onChangeText={setContact}
+          keyboardType="numeric"
         />
         <Button title="Adicionar Cliente" onPress={handleAddClient} />
       </View>

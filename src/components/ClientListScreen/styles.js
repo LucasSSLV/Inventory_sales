@@ -39,7 +39,6 @@ const styleView = StyleSheet.create({
     backgroundColor: "#9DBDFF",
     alignItems: "center",
     justifyContent: "center",
-    // fontSize: 20,
     borderRadius: 20,
     fontWeight: "bold",
   },
