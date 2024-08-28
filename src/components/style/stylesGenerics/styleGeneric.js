@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     zIndex: -1,
     position: "absolute",
     backgroundColor: "#D1E9F6",
-    // flex: 1,
     resizeMode: "cover",
   },
   container: {
@@ -16,9 +15,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: 100,
     borderCurve: 5,
-    // backgroundColor: "rgba(000, 0, 0, 0.9)",
     borderColor: "black",
-    // padding: 8,
   },
   inputArea: {
     width: "80%",
@@ -31,7 +28,6 @@ const styles = StyleSheet.create({
     borderColor: "rgba(000, 0, 0, 0.6)",
     borderWidth: 2,
     borderRadius: 5,
-    // color: "white",
     backgroundColor: "rgba(000, 0, 0, 0.2)",
   },
 });

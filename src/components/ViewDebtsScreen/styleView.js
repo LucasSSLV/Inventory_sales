@@ -4,8 +4,17 @@ const styleView = StyleSheet.create({
   container: {
     flex: 1,
     width: "80%",
-    // height: "100%",
     borderRadius: 6,
+  },
+  viewDebits: {
+    marginTop: 50,
+    alignItems: "center",
+    height: 60,
+  },
+  viewTotal: {
+    flex: 1,
+    alignItems: "center",
+    width: "100%",
   },
   viewbuton: {
     justifyContent: "center",
